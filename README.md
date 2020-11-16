@@ -14,4 +14,4 @@ Infos:
 - Die Verbindung mit auth erlaubt es einem mehr Attribute einzusehen
 - Installation des OpenLDAP servers war einfach, so wie die reconfiguration via slapd
 - Server wasnt running after installation and had to be started
-- login mit admin pw funkltioniert erstmal nicht, da er noch auf die alte db zugreift
+- login mit admin pw funktioniert erstmal nicht, da er noch auf die alte db zugreift
