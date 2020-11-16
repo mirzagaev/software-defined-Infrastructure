@@ -10,4 +10,8 @@ Infos:
 
 # 16.11.2020
 - LDAP vorstellen
-- Exercises...
+- Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
+- Die Verbindung mit auth erlaubt es einem mehr Attribute einzusehen
+- Installation des OpenLDAP servers war einfach, so wie die reconfiguration via slapd
+- Server wasnt running after installation and had to be started
+- login mit admin pw funkltioniert erstmal nicht, da er noch auf die alte db zugreift
