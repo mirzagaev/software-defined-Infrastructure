@@ -18,6 +18,7 @@ Infos:
 
 ### Exercises
 - [x] Browse an existing LDAP Server
+    - DN: uid=am180,ou=userlist,dc=hdm-stuttgart,dc=de
 - [ ] Set up an OpenLdap server
 - [ ] Populating your DIT
 - [ ] Testing a bind operation as non - admin user
