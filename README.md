@@ -12,6 +12,7 @@ Infos:
 - Installation des OpenLDAP servers war einfach, so wie die reconfiguration via slapd
 - Server wasnt running after installation and had to be started
 - login mit admin pw funktioniert erstmal nicht, da er noch auf die alte db zugreift
+- mussten slapd purgen, da noch alte daten ausgelesen wurden
 
 ### Exercises
 - [x] Browse an existing LDAP Server
