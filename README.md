@@ -24,14 +24,17 @@ Infos:
     - Authentifizierung in Apache Directory Studio:
         - Bind DN oder Benutzer: cn=admin,dc=betrayer,dc=com
         - Passwort: secret
-- [ ] Testing a bind operation as non - admin user
-- [ ] Filter based search
-- [ ] Extending an existing entry
-- [ ] Accessing LDAP data by a mail client
-- [ ] LDAP configuration
-- [ ] LDAP based user login
-- [ ] Backup and recovery / restore
-- [ ] Accessing LDAP by a Java™ application
+- [x] **Testing a bind operation as non - admin user**
+    - Authentifizierung in Apache Directory Studio anpassen und den Zugriff mit dem zuletzt angelegten User testen:
+        - Bind DN oder Benutzer: uid=**bean**,ou=devel,ou=software,ou=departments,dc=betrayer;dc=com
+        - Passwort: bean
+- [ ] **Filter based search**
+- [ ] **Extending an existing entry**
+- [ ] **Accessing LDAP data by a mail client**
+- [ ] **LDAP configuration**
+- [ ] **LDAP based user login**
+- [ ] **Backup and recovery / restore**
+- [ ] **Accessing LDAP by a Java™ application**
 
 
 # DNS: 02.11.2020 - 09.11.2020
