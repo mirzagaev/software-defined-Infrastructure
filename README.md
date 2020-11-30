@@ -32,12 +32,14 @@ Infos:
     - All users with a uid attribute value starting with the letter “b”.
         - Suchbasis: ou=devel,ou=software,ou=departments,dc=betrayer,dc=com  -  Filter: (uid=b*)
     - All entries either with either a defined uid attribute or a ou attribute starting with letter “d”.
-        - 
     - All users entries within the whole DIT having a gidNumber value of 100.
     - All user entries belonging to the billing department having a uid value greater than 1023.
     - All user entries within the whole DIT having a commonName containing the substring “ei”.
     - All user entries within the whole DIT belonging to gidNumber == 100 or having a uid value starting with letter “t”.
-- [ ] **Extending an existing entry**
+- [x] **Extending an existing entry**
+    - DN: uid=bean,ou=devel,ou=software,ou=departments,dc=betrayer;dc=com
+        - Neue **objectClass* =posixAccount hinzufügen
+        - Attribute uidNumber, gidNumber und homeDirectory mit Werten belegen
 - [ ] **Accessing LDAP data by a mail client**
 - [ ] **LDAP configuration**
 - [ ] **LDAP based user login**
