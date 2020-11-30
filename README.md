@@ -10,9 +10,9 @@ Infos:
 - login mit admin pw funktioniert erstmal nicht, da er noch auf die alte db zugreift
 
 ### Exercises
-- [x] Browse an existing LDAP Server
+- [x] **Browse an existing LDAP Server**
     - DN: uid=am180,ou=userlist,dc=hdm-stuttgart,dc=de
-- [x] Set up an OpenLdap server
+- [x] **Set up an OpenLdap server**
     - `aptitude install dialog`
     - `aptitude install slapd`
     - Passwort eingeben: secret
@@ -20,7 +20,10 @@ Infos:
     - Server-Konfiguration auslassen? -> Nein
     - DNS & NAME DER ORGANISAZION: betrayer.com
     - Falls Fehler auftreten bzw. neue Konfiguration des DNS Domains nicht übernommen werden kann, müssen bestimmte Ordner geleert werden, damit Änderungen wirksam werden (/var/lib/ldap/, /var/backups/slapd...../)
-- [ ] Populating your DIT
+- [ ] **Populating your DIT**
+    - Authentifizierung in Apache Directory Studio:
+        - Bind DN oder Benutzer: cn=admin,dc=betrayer,dc=com
+        - Passwort: secret
 - [ ] Testing a bind operation as non - admin user
 - [ ] Filter based search
 - [ ] Extending an existing entry
