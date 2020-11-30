@@ -20,7 +20,7 @@ Infos:
     - Server-Konfiguration auslassen? -> Nein
     - DNS & NAME DER ORGANISAZION: betrayer.com
     - Falls Fehler auftreten bzw. neue Konfiguration des DNS Domains nicht übernommen werden kann, müssen bestimmte Ordner geleert werden, damit Änderungen wirksam werden (/var/lib/ldap/, /var/backups/slapd...../)
-- [ ] **Populating your DIT**
+- [x] **Populating your DIT**
     - Authentifizierung in Apache Directory Studio:
         - Bind DN oder Benutzer: cn=admin,dc=betrayer,dc=com
         - Passwort: secret
