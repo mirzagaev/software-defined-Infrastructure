@@ -23,12 +23,20 @@ Infos:
 - [x] **Populating your DIT**
     - Authentifizierung in Apache Directory Studio:
         - Bind DN oder Benutzer: cn=admin,dc=betrayer,dc=com
-        - Passwort: secret
+        - slapd-MasterPasswort
 - [x] **Testing a bind operation as non - admin user**
     - Authentifizierung in Apache Directory Studio anpassen und den Zugriff mit dem zuletzt angelegten User testen:
         - Bind DN oder Benutzer: uid=**bean**,ou=devel,ou=software,ou=departments,dc=betrayer;dc=com
         - Passwort: bean
 - [ ] **Filter based search**
+    - All users with a uid attribute value starting with the letter “b”.
+        - Suchbasis: ou=devel,ou=software,ou=departments,dc=betrayer,dc=com  -  Filter: (uid=b*)
+    - All entries either with either a defined uid attribute or a ou attribute starting with letter “d”.
+        - 
+    - All users entries within the whole DIT having a gidNumber value of 100.
+    - All user entries belonging to the billing department having a uid value greater than 1023.
+    - All user entries within the whole DIT having a commonName containing the substring “ei”.
+    - All user entries within the whole DIT belonging to gidNumber == 100 or having a uid value starting with letter “t”.
 - [ ] **Extending an existing entry**
 - [ ] **Accessing LDAP data by a mail client**
 - [ ] **LDAP configuration**
