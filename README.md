@@ -2,7 +2,10 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
-# LDAP: 16.11.2020 - 30.11.2020
+# Apache web server: 07.12.2020 -
+- ...
+
+# LDAP: 16.11.2020 - 06.12.2020
 - Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
 - Die Verbindung mit auth erlaubt es einem mehr Attribute einzusehen
 - Installation des OpenLDAP servers war einfach, so wie die reconfiguration via slapd
