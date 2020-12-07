@@ -16,10 +16,12 @@ Install: `aptitude install apache2`
         - Create new directory `mkdir /var/www/html/home/sdidoc`
         - new index.html file.
         - Create new Alias Directive in /etc/apache2/apache2.conf    
-        `Alias "/am180" "/var/www/html/home/sdidoc"
-        <Directory /var/www/html/home/sdidoc/>
+        - `Alias "/am180" "/var/www/html/home/sdidoc"`
+        - `<Directory /var/www/html/home/sdidoc/>
         AllowOverride None
-        Require all granted`
+        Require all granted
+        </Directory>`
+        - `service apache2 restart`
 - [ ] **Virtual hosts**
 - [ ] **SSL / TLS Support**
 - [ ] **LDAP authentication**
