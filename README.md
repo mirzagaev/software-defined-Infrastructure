@@ -11,6 +11,13 @@ Install: `aptitude install apache2`
     1. sdi9b.mi.hdm-stuttgart.de -> Apache2 Debian Default Page - It works!
     2. `mv index.html doc.html` -> Server does not find index.html, it observe the whole Directory
     3. index.html in /var/www/html/ überschreiben
+    4. `apt-get install apache2-doc`, server path is configured in /etc/apache2/sites-available/000-default.conf and /etc/apache2/apache2.conf
+    5. Create new directory `mkdir /var/www/html/home/sdidoc`, new index.html file. Create new Alias Directive in /etc/apache2/apache2.conf
+    `Alias "/am180" "/var/www/html/home/sdidoc"`
+    `<Directory /var/www/html/home/sdidoc/>`
+    `AllowOverride None`
+    `Require all granted`
+</Directory>`
 - [ ] **Virtual hosts**
 - [ ] **SSL / TLS Support**
 - [ ] **LDAP authentication**
