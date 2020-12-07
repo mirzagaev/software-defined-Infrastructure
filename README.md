@@ -5,6 +5,15 @@ Infos:
 # Apache web server: 07.12.2020 -
 - ...
 
+### Exercises
+- [x] **First Steps**
+- [x] **Virtual hosts**
+- [x] **SSL / TLS Support**
+- [x] **LDAP authentication**
+- [x] **Mysql™ database administration**
+- [x] **Providing WEB based user management to your LDAP Server**
+- [x] **Publish your documentation**
+
 # LDAP: 16.11.2020 - 06.12.2020
 - Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
 - Die Verbindung mit auth erlaubt es einem mehr Attribute einzusehen
