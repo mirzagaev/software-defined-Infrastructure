@@ -8,6 +8,9 @@ Install: `aptitude install apache2`
 
 ### Exercises
 - [ ] **First Steps**
+    1. sdi9b.mi.hdm-stuttgart.de -> Apache2 Debian Default Page - It works!
+    2. `mv index.html doc.html` -> Server does not find index.html, it observe the whole Directory
+    3. index.html in /var/www/html/ überschreiben
 - [ ] **Virtual hosts**
 - [ ] **SSL / TLS Support**
 - [ ] **LDAP authentication**
