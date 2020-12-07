@@ -6,13 +6,13 @@ Infos:
 - ...
 
 ### Exercises
-- [x] **First Steps**
-- [x] **Virtual hosts**
-- [x] **SSL / TLS Support**
-- [x] **LDAP authentication**
-- [x] **Mysql™ database administration**
-- [x] **Providing WEB based user management to your LDAP Server**
-- [x] **Publish your documentation**
+- [ ] **First Steps**
+- [ ] **Virtual hosts**
+- [ ] **SSL / TLS Support**
+- [ ] **LDAP authentication**
+- [ ] **Mysql™ database administration**
+- [ ] **Providing WEB based user management to your LDAP Server**
+- [ ] **Publish your documentation**
 
 # LDAP: 16.11.2020 - 06.12.2020
 - Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
