@@ -3,7 +3,8 @@ Infos:
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
 # Apache web server: 07.12.2020 -
-- ...
+
+Install: `aptitude install apache2`
 
 ### Exercises
 - [ ] **First Steps**
