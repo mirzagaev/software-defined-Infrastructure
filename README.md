@@ -4,11 +4,13 @@ Infos:
 
 # Apache web server: 07.12.2020 -
 
-Code-Schnipsel:
+### Schnipsel:
 - `aptitude install apache2` Installation von Apache
 - `a2ensite`
 - `a2enconf`
 - `a2disconf`
+- `systemctl reload apache2`
+- `systemctl restart apache2`
 
 ### Exercises
 - [x] **First Steps**
@@ -83,5 +85,10 @@ Code-Schnipsel:
 
 
 # DNS: 02.11.2020 - 09.11.2020
+
+### Schnipsel:
+- `systemctl restart bind9`
+
+### Exercises
 - bind Installation problemlos
 - DNS Konfiguration schlecht verständlich, da die Aufgabe nicht ganz Praxisnah ist bzw. an eigenem Server wenig Sinn ergibt
