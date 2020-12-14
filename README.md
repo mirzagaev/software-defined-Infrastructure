@@ -23,6 +23,10 @@ Install: `aptitude install apache2`
         </Directory>`
         - `service apache2 restart`
 - [ ] **Virtual hosts**
+    1. Default-Konfigurationsdatei in /etc/apache2/sites-available/ duplizieren und in am180.conf umbennen
+    2. Servername hinterlegen: am180.mi.hdm-stuttgart.de
+    3. BIND-Konfiguration anpassen, NameServer erweitern: am180.mi.hdm-stuttgart.de.        IN          CNAME       sdi9b.mi.hdm-stuttgart.de.
+    4. Netzwerk-Adapter-Einstellungen anpassen, VPN->IpV4->Eigenschaften->Bevorzugte DNS-Server: 141.62.75.123 hinterlegen
 - [ ] **SSL / TLS Support**
 - [ ] **LDAP authentication**
 - [ ] **Mysql™ database administration**
