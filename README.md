@@ -4,7 +4,11 @@ Infos:
 
 # Apache web server: 07.12.2020 -
 
-Install: `aptitude install apache2`
+Code-Schnipsel:
+- `aptitude install apache2` Installation von Apache
+- `a2ensite`
+- `a2enconf`
+- `a2disconf`
 
 ### Exercises
 - [x] **First Steps**
