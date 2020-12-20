@@ -36,7 +36,11 @@ Infos:
         - Probleme?!!! 
         - **shell: `nslookup -> am180` muss NS finden!!!**
     4. Netzwerk-Adapter-Einstellungen anpassen, VPN->IpV4->Eigenschaften->Bevorzugte DNS-Server: 141.62.75.123 hinterlegen
-    5. ...
+    5. `nano /bind9/db.sdi9b` add am180 and manual as A records
+    6. create new site-configurations in /apache2/sites-available/am180.conf & manual.conf
+    7. generate configurations with `a2ensite manual.conf`, reload apache2:
+        - http://am180.mi.hdm-stuttgart.de
+        - http://manual.mi.hdm-stuttgart.de
 - [ ] **SSL / TLS Support**
 - [ ] **LDAP authentication**
 - [ ] **Mysql™ database administration**
