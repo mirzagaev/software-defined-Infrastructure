@@ -2,11 +2,11 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
-# Apache web server: 07.12.2020 - 14.12.2020
+# Apache web server: 07.12.2020 - 21.12.2020
 
 ### Schnipsel:
 - `aptitude install apache2` Installation von Apache
-- `a2ensite`
+- `a2ensite` create symlink to configuration file in /apache2/sites-enable/
 - `a2enconf`
 - `a2disconf`
 - `systemctl reload apache2`
@@ -28,7 +28,7 @@ Infos:
         Require all granted
         </Directory>`
         - `service apache2 restart`
-- [ ] **Virtual hosts**
+- [x] **Virtual hosts**
     siehe: https://www.digitalocean.com/community/tutorials/how-to-configure-bind-as-a-private-network-dns-server-on-ubuntu-14-04
     1. Default-Konfigurationsdatei in /etc/apache2/sites-available/ duplizieren und in am180.conf umbennen
     2. Servername hinterlegen: am180.mi.hdm-stuttgart.de
