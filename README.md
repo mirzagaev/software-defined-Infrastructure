@@ -42,6 +42,10 @@ Infos:
         - http://am180.mi.hdm-stuttgart.de
         - http://manual.mi.hdm-stuttgart.de
 - [ ] **SSL / TLS Support**
+    1. Enable SSL `a2enmod ssl`
+    2. Create the Root Certificate:
+        - `openssl genrsa -des3 -out rootCA.key 2048`, password: sdi9b_Am180
+        - `openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem`, Fragen beatnworten
 - [ ] **LDAP authentication**
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
