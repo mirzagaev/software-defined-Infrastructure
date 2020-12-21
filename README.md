@@ -41,7 +41,7 @@ Infos:
     7. generate configurations with `a2ensite manual.conf`, reload apache2:
         - http://am180.mi.hdm-stuttgart.de
         - http://manual.mi.hdm-stuttgart.de
-- [ ] **SSL / TLS Support**
+- [x] **SSL / TLS Support**
     1. Enable SSL: `a2enmod ssl`
     2. Create the Root Certificate:
         - `openssl genrsa -des3 -out rootCA.key 2048`, password: sdi9b_Am180
