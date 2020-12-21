@@ -53,6 +53,10 @@ Infos:
         - generate the certificate signing request: `openssl req -new -key device.key -out device.csr`, You’ll be asked various questions (Country, State/Province, etc.). Answer them how you see fit. The important question to answer though is common-name.
         - create the certificate: `openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out device.crt -days 500 -sha256`
         - now we have three files: device.key (private key), device.csr (certificate signing request) and device.crt (signed certificate).
+        - kopiere den private key und signed certificate in die jeweiligen SSL Verzeichnisse:
+            - `cp device.crt /etc/ssl/certs/sdi9bam180.crt`
+            - `cp device.key /etc/ssl/private/sdi9bam180.key`
+    5. Configure Apache, edit /apache2/sites-available/am180.conf and restart apache
 - [ ] **LDAP authentication**
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
