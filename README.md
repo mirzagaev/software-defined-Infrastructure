@@ -42,10 +42,17 @@ Infos:
         - http://am180.mi.hdm-stuttgart.de
         - http://manual.mi.hdm-stuttgart.de
 - [ ] **SSL / TLS Support**
-    1. Enable SSL `a2enmod ssl`
+    1. Enable SSL: `a2enmod ssl`
     2. Create the Root Certificate:
         - `openssl genrsa -des3 -out rootCA.key 2048`, password: sdi9b_Am180
-        - `openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem`, Fragen beatnworten
+        - `openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem`, Fragen beatnworten.
+        - Nun sollten wir im Hauptverzeichnis zwei Dateien wiederfinden: rootCA.key und rootCA.pem
+    3. Install Root Certificate into your workstation: https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/#installing-root-cert
+    4. Create A Certificate: 
+        - `openssl genrsa -out device.key 2048`
+        - generate the certificate signing request: `openssl req -new -key device.key -out device.csr`, You’ll be asked various questions (Country, State/Province, etc.). Answer them how you see fit. The important question to answer though is common-name.
+        - create the certificate: `openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out device.crt -days 500 -sha256`
+        - now we have three files: device.key (private key), device.csr (certificate signing request) and device.crt (signed certificate).
 - [ ] **LDAP authentication**
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
