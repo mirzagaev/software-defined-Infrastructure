@@ -3,6 +3,11 @@ Infos:
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
 # File cloud: 11.01.2021 - ...
+Set up a Nextcloud server based on Apache and Mysql following Complete NC Installation on Debian 9 Stretch and manual update. Mind the following hints:
+
+- [ ] Use https://sdiXY.mi.hdm-stuttgart.de/nextcloud rather than https://sdiXY.mi.hdm-stuttgart.de as base URL to your server reusing your existing Apache server installation. This should be mapped to a Nextcloud root directory /var/www/nextcloudoutside e.g. /var/www/html/nextcloud denying attackers getting access to sensitive configuration data.
+- [ ] If you've already configured a Mysql server use that one instead of the installation manual's MariaDB server.
+- [ ] Depending on the /etc/passwd home directory settings of user www-data you may have to use sudo -u www-data php /var/www/html/nextcloud/occ ... rather than simply sudo -u www-data ./occ ....
 
 # Apache web server: 07.12.2020 - 24.01.2021
 
