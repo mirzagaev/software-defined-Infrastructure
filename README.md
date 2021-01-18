@@ -57,7 +57,9 @@ Infos:
             - `cp device.crt /etc/ssl/certs/sdi9bam180.crt`
             - `cp device.key /etc/ssl/private/sdi9bam180.key`
     5. Configure Apache, edit /apache2/sites-available/am180.conf and restart apache
-- [ ] **LDAP authentication**
+- [x] **LDAP authentication**
+    `a2enmond ldap`
+    `a2enmond authnz_ldap`
     1. in LDAP-Browser navigate to the organizationUnit, in which you want create this testuser.
     2. new Entry -> "inetOrgPerson" : 
     `#!RESULT OK
@@ -71,7 +73,7 @@ Infos:
     objectClass: organizationalPerson
     objectClass: person
     objectClass: top`
-    2. "add new Attribute" -> Typ: userPassword -> Method: SMD5 -> pw: tusdi9b
+    2. "new attribute" -> Typ: userPassword -> Method: SMD5 -> pw: tusdi9b
     `#!RESULT OK
     #!CONNECTION ldap://sdi9b.mi.hdm-stuttgart.de:389
     #!DATE 2021-01-18T08:33:23.103
@@ -79,8 +81,17 @@ Infos:
     changetype: modify
     add: userPassword
     userPassword:: e1NNRDV9NXdTZGdPV3JzZXRqRG1sY2cyM0xVN3FJOFloczhCM3A=`
-    3. duplicate old ldap-server-connection, rename and reset confs -> authentication: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com -> pw see at top
-    4. 
+    3. "new attribute" -> uid: tuser
+    4. duplicate old ldap-server-connection, rename and reset confs -> authentication: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com -> pw see at top
+    5. open /etc/apache2/apache.conf add to existed directory /var/www
+    `AllowOverride None
+    AuthName "Private"
+    AuthType Basic
+    AuthBasicProvider ldap
+    AuthLDAPURL ldap://sdi9b.mi.hdm-stuttgart.de/ou=testing,ou=software,ou=departments,dc=betrayer,dc=com?uid
+    Require valid-user`
+    ?uid -> Argument for user checking
+    6. restart apache2
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
