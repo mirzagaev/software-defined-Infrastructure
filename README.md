@@ -2,7 +2,9 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
-# Apache web server: 07.12.2020 - 24.01.2020
+# File cloud: 11.01.2021 - ...
+
+# Apache web server: 07.12.2020 - 24.01.2021
 
 ### Schnipsel:
 - `aptitude install apache2` Installation von Apache
