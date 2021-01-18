@@ -58,6 +58,19 @@ Infos:
             - `cp device.key /etc/ssl/private/sdi9bam180.key`
     5. Configure Apache, edit /apache2/sites-available/am180.conf and restart apache
 - [ ] **LDAP authentication**
+    1. in LDAP-Browser navigate to the organizationUnit, in which you want create this testuser.
+    2. new Entry -> "inetOrgPerson" : 
+    `#!RESULT OK
+    #!CONNECTION ldap://sdi9b.mi.hdm-stuttgart.de:389
+    #!DATE 2021-01-18T08:24:33.679
+    dn: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com
+    changetype: add
+    cn: tuser
+    sn: Testuser
+    objectClass: inetOrgPerson
+    objectClass: organizationalPerson
+    objectClass: person
+    objectClass: top`
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
