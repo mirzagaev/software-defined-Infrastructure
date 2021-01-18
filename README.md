@@ -80,6 +80,7 @@ Infos:
     add: userPassword
     userPassword:: e1NNRDV9NXdTZGdPV3JzZXRqRG1sY2cyM0xVN3FJOFloczhCM3A=`
     3. duplicate old ldap-server-connection, rename and reset confs -> authentication: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com -> pw see at top
+    4. 
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
