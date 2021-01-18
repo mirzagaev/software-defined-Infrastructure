@@ -71,6 +71,15 @@ Infos:
     objectClass: organizationalPerson
     objectClass: person
     objectClass: top`
+    2. "add new Attribute" -> Typ: userPassword -> Method: SMD5 -> pw: tusdi9b
+    `#!RESULT OK
+    #!CONNECTION ldap://sdi9b.mi.hdm-stuttgart.de:389
+    #!DATE 2021-01-18T08:33:23.103
+    dn: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com
+    changetype: modify
+    add: userPassword
+    userPassword:: e1NNRDV9NXdTZGdPV3JzZXRqRG1sY2cyM0xVN3FJOFloczhCM3A=`
+    3. duplicate old ldap-server-connection, rename and reset confs -> authentication: cn=tuser,ou=testing,ou=software,ou=departments,dc=betrayer,dc=com -> pw see at top
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
