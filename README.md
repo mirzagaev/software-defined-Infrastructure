@@ -98,7 +98,7 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
     AuthLDAPURL ldap://sdi9b.mi.hdm-stuttgart.de/ou=testing,ou=software,ou=departments,dc=betrayer,dc=com?uid
     Require valid-user`
     ?uid -> Argument for user checking
-    6. restart apache2
+    6. restart apache2 and open http://sdi9b.mi.hdm-stuttgart.de/ in browser
 - [ ] **Mysql™ database administration**
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
