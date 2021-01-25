@@ -99,7 +99,7 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
     Require valid-user`
     ?uid -> Argument for user checking
     6. restart apache2 and open http://sdi9b.mi.hdm-stuttgart.de/ in browser
-- [ ] **Mysql™ database administration**
+- [x] **Mysql™ database administration**
     1. MySQL installieren: `apt install mysql-server`
     2. MySQL konfigurieren: `mysql_secure_installation`
         - pw: _sdi9b!
@@ -115,7 +115,9 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - `sudo phpenmod mbstring`
         - Starten Sie anschließend Apache neu, damit Ihre Änderungen erkannt werden `systemctl restart apache2`
         - http://sdi9b.mi.hdm-stuttgart.de/phpmyadmin/
+        - `mysql -u root` -> `UPDATE mysql.user SET authentication_string = PASSWORD('sdi_9b') WHERE User = 'root' AND Host = 'localhost';`
 - [ ] **Providing WEB based user management to your LDAP Server**
+    1. 
 - [ ] **Publish your documentation**
 
 # LDAP: 16.11.2020 - 06.12.2020
