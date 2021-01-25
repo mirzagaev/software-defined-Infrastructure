@@ -116,8 +116,10 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - Starten Sie anschließend Apache neu, damit Ihre Änderungen erkannt werden `systemctl restart apache2`
         - http://sdi9b.mi.hdm-stuttgart.de/phpmyadmin/
         - `mysql -u root` -> `UPDATE mysql.user SET authentication_string = PASSWORD('sdi_9b') WHERE User = 'root' AND Host = 'localhost';`
-- [ ] **Providing WEB based user management to your LDAP Server**
-    1. 
+        - restart service: `systemctl start mariadb`
+- [x] **Providing WEB based user management to your LDAP Server**
+    1. Install LDAP Account Manager: `apt -y install ldap-account-manager`
+    2. http://sdi9b.mi.hdm-stuttgart.de/lam
 - [ ] **Publish your documentation**
 
 # LDAP: 16.11.2020 - 06.12.2020
