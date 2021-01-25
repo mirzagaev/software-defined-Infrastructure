@@ -126,7 +126,7 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - Tree suffix: dc=betrayer,dc=com
         - Security settings: List of valid users: cn=admin,dc=betrayer,dc=com
         - 
-- [ ] **Publish your documentation**
+- [x] **Publish your documentation**
 
 # LDAP: 16.11.2020 - 06.12.2020
 - Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
