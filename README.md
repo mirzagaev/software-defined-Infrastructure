@@ -111,6 +111,10 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - Wählen Sie für die Serverauswahl **apache2**
         - Wählen Sie **Yes**, wenn Sie gefragt werden, ob dbconfig-common zum Einrichten der Datenbank verwendet werden soll.
         - Sie werden dann aufgefordert, ein MySQL-Anwendungspasswort für phpMyAdmin auszuwählen und zu bestätigen
+        - Der Installationsvorgang fügt die Apache-Konfigurationsdatei phpMyAdmin in das Verzeichnis /etc/apache2/conf-enabled/ ein, wo sie automatisch gelesen wird. Um die Konfiguration von Apache und PHP für die Arbeit mit phpMyAdmin abzuschließen, müssen Sie in diesem Abschnitt des Tutorials nur noch explizit die mbstring-PHP-Erweiterung aktivieren. Geben Sie dazu Folgendes ein:
+        - `sudo phpenmod mbstring`
+        - Starten Sie anschließend Apache neu, damit Ihre Änderungen erkannt werden `systemctl restart apache2`
+        - http://sdi9b.mi.hdm-stuttgart.de/phpmyadmin/
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
 
