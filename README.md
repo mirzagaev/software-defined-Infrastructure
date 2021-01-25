@@ -118,8 +118,14 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - `mysql -u root` -> `UPDATE mysql.user SET authentication_string = PASSWORD('sdi_9b') WHERE User = 'root' AND Host = 'localhost';`
         - restart service: `systemctl start mariadb`
 - [x] **Providing WEB based user management to your LDAP Server**
-    1. Install LDAP Account Manager: `apt -y install ldap-account-manager`
-    2. http://sdi9b.mi.hdm-stuttgart.de/lam
+    - Install LDAP Account Manager: `apt -y install ldap-account-manager`
+    - http://sdi9b.mi.hdm-stuttgart.de/lam -> [LAM configuration] -> Edit server profiles -> Default password is **lam**
+    - The first thing to change is Profile Password, this is at the end of General Settings page -> **lSmdi9!**
+    - Next is to set LDAP Server address and Tree suffix. 
+        - Server address: sdi9b.mi.hdm-stuttgart.de
+        - Tree suffix: dc=betrayer,dc=com
+        - Security settings: List of valid users: cn=admin,dc=betrayer,dc=com
+        - 
 - [ ] **Publish your documentation**
 
 # LDAP: 16.11.2020 - 06.12.2020
