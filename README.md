@@ -9,7 +9,7 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
 - [ ] If you've already configured a Mysql server use that one instead of the installation manual's MariaDB server.
 - [ ] Depending on the /etc/passwd home directory settings of user www-data you may have to use sudo -u www-data php /var/www/html/nextcloud/occ ... rather than simply sudo -u www-data ./occ ....
 
-# Apache web server: 07.12.2020 - 24.01.2021
+# Apache web server: 07.12.2020 - 25.01.2021
 
 ### Schnipsel:
 - `aptitude install apache2` Installation von Apache
@@ -100,6 +100,17 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
     ?uid -> Argument for user checking
     6. restart apache2 and open http://sdi9b.mi.hdm-stuttgart.de/ in browser
 - [ ] **Mysql™ database administration**
+    1. MySQL installieren: `apt install mysql-server`
+    2. MySQL konfigurieren: `mysql_secure_installation`
+        - pw: _sdi9b!
+        - Dies führt Sie durch eine Reihe von Eingabeaufforderungen, in denen Sie einige Änderungen an den Sicherheitsoptionen Ihrer MySQL-Installation vornehmen können. Die erste Eingabeaufforderung fragt, ob Sie das validierte Passwort-Plugin einrichten möchten, mit dem Sie die Stärke Ihres MySQL-Passworts testen können. Unabhängig von Ihrer Wahl wird die nächste Eingabeaufforderung darin bestehen, ein Passwort für den MySQL-Root-Benutzer festzulegen. Geben Sie ein sicheres Passwort Ihrer Wahl ein und bestätigen Sie es anschließend.
+        - Von dort aus können Sie Y und dann ENTER drücken, um die Standardwerte für alle folgenden Fragen zu übernehmen. Dadurch werden einige anonyme Benutzer und die Testdatenbank entfernt, Remote-Root-Logins deaktiviert und diese neuen Regeln geladen, so dass MySQL die von Ihnen vorgenommenen Änderungen sofort berücksichtigt.
+        - "All done!  If you've completed all of the above steps, your MariaDB installation should now be secure. Thanks for using MariaDB!"
+        - Use mysql server in console with: **mysql**
+    3. Installieren von phpMyAdmin: `apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl`
+        - Wählen Sie für die Serverauswahl **apache2**
+        - Wählen Sie **Yes**, wenn Sie gefragt werden, ob dbconfig-common zum Einrichten der Datenbank verwendet werden soll.
+        - Sie werden dann aufgefordert, ein MySQL-Anwendungspasswort für phpMyAdmin auszuwählen und zu bestätigen
 - [ ] **Providing WEB based user management to your LDAP Server**
 - [ ] **Publish your documentation**
 
