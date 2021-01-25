@@ -17,6 +17,7 @@ wget -q -O- https://packages.sury.org/php/apt.gpg | apt-key add -
 echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list
 apt-get update`
 - `apt install php7.2 php7.2-cgi php7.2-cli php7.2-common php7.2-curl php7.2-fpm php7.2-gd php7.2-json php7.2-mbstring php7.2-mysql php7.2-opcache php7.2-readline php7.2-xml php7.2-zip`
+- Remove old PHP version: `apt purge php7.0`
 
 - unip package installieren: `apt install vim unzip`
 - in den HTML-Verzeichnis wechseln: `cd /var/www/html`
@@ -66,7 +67,25 @@ apt-get update`
     AllowOverride None
     Require all granted
 </Directory>`
-- 
+
+create DB
+- login: `mysql -u root -p`
+- `CREATE DATABASE nextcloud;
+GRANT ALL ON nextcloud.* to 'nextcloud'@'localhost' IDENTIFIED BY 'db_sdi9b/';
+FLUSH PRIVILEGES;
+exit`
+
+##Fehler
+- PHP-Modul zip nicht installiert.
+- PHP-Modul dom nicht installiert.
+- PHP-Modul XMLWriter nicht installiert.
+- PHP-Modul XMLReader nicht installiert.
+- PHP-Modul libxml nicht installiert.
+- PHP-Modul mbstring nicht installiert.
+- PHP-Modul GD nicht installiert.
+- PHP-Modul SimpleXML nicht installiert.
+- PHP-Modul cURL nicht installiert.
+- PHP-Module wurden installiert, werden aber als noch fehlend gelistet?
 
 # Apache web server: 07.12.2020 - 25.01.2021
 
