@@ -2,12 +2,59 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
-# File cloud: 11.01.2021 - ...
+# File cloud: 25.01.2021 - ...
 Set up a Nextcloud server based on Apache and Mysql following Complete NC Installation on Debian 9 Stretch and manual update. Mind the following hints:
 
-- [ ] Use https://sdiXY.mi.hdm-stuttgart.de/nextcloud rather than https://sdiXY.mi.hdm-stuttgart.de as base URL to your server reusing your existing Apache server installation. This should be mapped to a Nextcloud root directory /var/www/nextcloudoutside e.g. /var/www/html/nextcloud denying attackers getting access to sensitive configuration data.
-- [ ] If you've already configured a Mysql server use that one instead of the installation manual's MariaDB server.
-- [ ] Depending on the /etc/passwd home directory settings of user www-data you may have to use sudo -u www-data php /var/www/html/nextcloud/occ ... rather than simply sudo -u www-data ./occ ....
+
+- unip package installieren: `apt install vim unzip`
+- in den HTML-Verzeichnis wechseln: `cd /var/www/html`
+- NC-daten downloaden: `wget https://download.nextcloud.com/server/releases/latest.zip`
+- unpacken: `unzip latest.zip`
+- `cd nextcloud`
+- in Apache-Sites-available Ordner wechseln: `cd /etc/apache2/sites-available/`
+- `wget https://raw.githubusercontent.com/dicenl/nextcloud/master/vhost.conf`
+- `mv vhost.conf nextcloud.conf`
+- nextcloud.conf anpassen
+    - `<IfModule mod_ssl.c>
+	<VirtualHost *:80>
+		ServerName sdi9b.mi.hdm-stuttgart.de
+
+		ServerAdmin am180@hdm-stuttgart.de
+	    DocumentRoot /var/www/html/nextcloud
+
+	    ErrorLog ${APACHE_LOG_DIR}/error.log
+	    CustomLog ${APACHE_LOG_DIR}/access.log combined
+	</VirtualHost>
+
+	<VirtualHost *:443>
+		DocumentRoot "/var/www/html/nextcloud"
+		ServerName sdi9b.mi.hdm-stuttgart.de
+		ErrorLog ${APACHE_LOG_DIR}/error.log
+		CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+		<Directory /var/www/html/nextcloud/>
+			Options +FollowSymlinks
+			AllowOverride All
+			SetEnv HOME /var/www/html/nextcloud
+			SetEnv HTTP_HOME /var/www/html/nextcloud Satisfy Any
+		</Directory>
+
+		SSLEngine on
+		SSLCertificateFile /etc/apache2/ssl/apache.pem
+		SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+
+		<IfModule mod_headers.c>
+			Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
+		</IfModule>
+	</VirtualHost>
+</IfModule>`
+- `nano apache.conf`
+    - `Alias "/nextcloud" "/var/www/html/nextcloud"
+<Directory /var/www/html/nextcloud/>
+    AllowOverride None
+    Require all granted
+</Directory>`
+- 
 
 # Apache web server: 07.12.2020 - 25.01.2021
 
@@ -126,7 +173,8 @@ Set up a Nextcloud server based on Apache and Mysql following Complete NC Instal
         - Tree suffix: dc=betrayer,dc=com
         - Security settings: List of valid users: cn=admin,dc=betrayer,dc=com
         - 
-- [x] **Publish your documentation**
+- [ ] **Publish your documentation**
+    - http://sdi9b.mi.hdm-stuttgart.de/doc/
 
 # LDAP: 16.11.2020 - 06.12.2020
 - Verbinden zum HDM LDAP Server war problemlos, ebenso das filtern
