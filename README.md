@@ -2,23 +2,21 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
-# File cloud: 25.01.2021 - ...
-Set up a Nextcloud server based on Apache and Mysql following Complete NC Installation on Debian 9 Stretch and manual update. Mind the following hints:
+# File cloud: 25.01.2021 - 01.03.2021
 
+## https://sdi9b.mi.hdm-stuttgart.de/nextcloud/
 
 - `apt install php-gd php-json php-mysql php-curl`
 - `apt install php-intl php-mcrypt php-imagick`
 - `apt install php-zip php-xmlwriter php-xmlreader php-xml php-mbstring php-simplexml`
-
 - PHP-Version to 7.2
-- `apt install software-properties-common`
-- `apt install apt-transport-https
+    - `apt install software-properties-common`
+    - `apt install apt-transport-https
 wget -q -O- https://packages.sury.org/php/apt.gpg | apt-key add -
 echo "deb https://packages.sury.org/php/ stretch main" | tee /etc/apt/sources.list.d/php.list
 apt-get update`
-- `apt install php7.2 php7.2-cgi php7.2-cli php7.2-common php7.2-curl php7.2-fpm php7.2-gd php7.2-json php7.2-mbstring php7.2-mysql php7.2-opcache php7.2-readline php7.2-xml php7.2-zip`
-- Remove old PHP version: `apt purge php7.0`
-
+    - `apt install php7.2 php7.2-cgi php7.2-cli php7.2-common php7.2-curl php7.2-fpm php7.2-gd php7.2-json php7.2-mbstring php7.2-mysql php7.2-opcache php7.2-readline php7.2-xml php7.2-zip`
+    - Remove old PHP version: `apt purge php7.0`
 - unip package installieren: `apt install vim unzip`
 - in den HTML-Verzeichnis wechseln: `cd /var/www/html`
 - NC-daten downloaden: `wget https://download.nextcloud.com/server/releases/latest.zip`
@@ -28,64 +26,13 @@ apt-get update`
 - `wget https://raw.githubusercontent.com/dicenl/nextcloud/master/vhost.conf`
 - `mv vhost.conf nextcloud.conf`
 - nextcloud.conf anpassen
-    - `<IfModule mod_ssl.c>
-	<VirtualHost *:80>
-		ServerName sdi9b.mi.hdm-stuttgart.de
-
-		ServerAdmin am180@hdm-stuttgart.de
-	    DocumentRoot /var/www/html/nextcloud
-
-	    ErrorLog ${APACHE_LOG_DIR}/error.log
-	    CustomLog ${APACHE_LOG_DIR}/access.log combined
-	</VirtualHost>
-
-	<VirtualHost *:443>
-		DocumentRoot "/var/www/html/nextcloud"
-		ServerName sdi9b.mi.hdm-stuttgart.de
-		ErrorLog ${APACHE_LOG_DIR}/error.log
-		CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-		<Directory /var/www/html/nextcloud/>
-			Options +FollowSymlinks
-			AllowOverride All
-			SetEnv HOME /var/www/html/nextcloud
-			SetEnv HTTP_HOME /var/www/html/nextcloud Satisfy Any
-		</Directory>
-
-		SSLEngine on
-		SSLCertificateFile /etc/apache2/ssl/apache.pem
-		SSLCertificateKeyFile /etc/apache2/ssl/apache.key
-
-		<IfModule mod_headers.c>
-			Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains"
-		</IfModule>
-	</VirtualHost>
-</IfModule>`
-- `nano apache.conf`
-    - `Alias "/nextcloud" "/var/www/html/nextcloud"
-<Directory /var/www/html/nextcloud/>
-    AllowOverride None
-    Require all granted
-</Directory>`
-
-create DB
-- login: `mysql -u root -p`
-- `CREATE DATABASE nextcloud;
+- create DB
+    - login: `mysql -u root -p`
+    - `CREATE DATABASE nextcloud;
 GRANT ALL ON nextcloud.* to 'nextcloud'@'localhost' IDENTIFIED BY 'db_sdi9b/';
 FLUSH PRIVILEGES;
 exit`
-
-##Fehler
-- PHP-Modul zip nicht installiert.
-- PHP-Modul dom nicht installiert.
-- PHP-Modul XMLWriter nicht installiert.
-- PHP-Modul XMLReader nicht installiert.
-- PHP-Modul libxml nicht installiert.
-- PHP-Modul mbstring nicht installiert.
-- PHP-Modul GD nicht installiert.
-- PHP-Modul SimpleXML nicht installiert.
-- PHP-Modul cURL nicht installiert.
-- PHP-Module wurden installiert, werden aber als noch fehlend gelistet?
+- `apt-get install python-certbot-apache -y`
 
 # Apache web server: 07.12.2020 - 25.01.2021
 
