@@ -34,6 +34,11 @@ FLUSH PRIVILEGES;
 exit`
 - `apt-get install python-certbot-apache -y`
 
+hilfreichende Links:
+- https://www.howtoforge.de/anleitung/wie-man-nextcloud-unter-debian-10-installiert/
+- https://www.bitblokes.de/nextcloud-9-auf-ubuntu-server-16-04-installieren/
+- https://help.nextcloud.com/t/complete-nc-installation-on-debian-9-stretch-and-manual-update/21881
+
 # Apache web server: 07.12.2020 - 25.01.2021
 
 ### Schnipsel:
