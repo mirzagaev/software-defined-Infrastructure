@@ -38,6 +38,7 @@ exit`
 - nano /var/www/nc_perm.sh and put code from tutorial
 - chmod 750 /var/www/nc_perm.sh
 - nano /etc/php/7.4/apache2/php.ini
+- apt install php7.4-ldap
 - systemctl restart apache2
 
 hilfreichende Links:
