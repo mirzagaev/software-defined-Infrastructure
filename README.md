@@ -5,6 +5,8 @@ Infos:
 # File cloud: 25.01.2021 - 01.03.2021
 
 ## https://sdi9b.mi.hdm-stuttgart.de/nextcloud/
+sdi9b
+wX^4R1YEjX!Xf
 
 - `apt install php-gd php-json php-mysql php-curl`
 - `apt install php-intl php-mcrypt php-imagick`
@@ -33,6 +35,7 @@ GRANT ALL ON nextcloud.* to 'nextcloud'@'localhost' IDENTIFIED BY 'db_sdi9b/';
 FLUSH PRIVILEGES;
 exit`
 - `apt-get install python-certbot-apache -y`
+- create nc_perm.sh
 
 hilfreichende Links:
 - https://www.howtoforge.de/anleitung/wie-man-nextcloud-unter-debian-10-installiert/
