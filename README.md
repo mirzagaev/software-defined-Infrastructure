@@ -5,9 +5,6 @@ Infos:
 # File cloud: 25.01.2021 - 01.03.2021
 
 ## https://sdi9b.mi.hdm-stuttgart.de/nextcloud/
-sdi9b
-wX^4R1YEjX!Xf
-
 - `apt install php-gd php-json php-mysql php-curl`
 - `apt install php-intl php-mcrypt php-imagick`
 - `apt install php-zip php-xmlwriter php-xmlreader php-xml php-mbstring php-simplexml`
