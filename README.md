@@ -35,7 +35,10 @@ GRANT ALL ON nextcloud.* to 'nextcloud'@'localhost' IDENTIFIED BY 'db_sdi9b/';
 FLUSH PRIVILEGES;
 exit`
 - `apt-get install python-certbot-apache -y`
-- create nc_perm.sh
+- nano /var/www/nc_perm.sh and put code from tutorial
+- chmod 750 /var/www/nc_perm.sh
+- nano /etc/php/7.4/apache2/php.ini
+- systemctl restart apache2
 
 hilfreichende Links:
 - https://www.howtoforge.de/anleitung/wie-man-nextcloud-unter-debian-10-installiert/
