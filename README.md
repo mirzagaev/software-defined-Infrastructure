@@ -2,6 +2,11 @@ Infos:
 - Schritte/Prozesse dokumentieren
 - Server: **sdi9b.mi.hdm-stuttgart.de**
 
+# Icinga: 01.02.2021 - 22.02.2021
+
+- [ ] Installation
+
+
 # File cloud: 25.01.2021 - 01.03.2021
 
 ## https://sdi9b.mi.hdm-stuttgart.de/nextcloud/
