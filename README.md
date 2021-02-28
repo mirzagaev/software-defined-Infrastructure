@@ -5,6 +5,9 @@ Infos:
 # Icinga: 01.02.2021 - 22.02.2021
 
 - [ ] Installation
+    - apt install icinga2 icinga2-ido-mysql
+    - mysql passwort: XHwKgtC9qrs8
+    - systemctl start icinga2.service
 
 
 # File cloud: 25.01.2021 - 01.03.2021
